@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                timeout(time: 2, unit: 'MINUTES'){
+                timeout(time: 4, unit: 'MINUTES'){
                     git branch: 'main', credentialsId: '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', url: 'https://github.com/stefano159jk/PSD-C7-G2-Proyecto.git'
                 }
             }
@@ -43,7 +43,7 @@ pipeline {
 
                 sleep(10) //seconds
 
-                timeout(time: 4, unit: 'MINUTES'){
+                timeout(time: 6, unit: 'MINUTES'){
                     waitForQualityGate abortPipeline: true
                 }
             }
